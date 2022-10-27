@@ -9,14 +9,17 @@ Install dependencies (consider using a virtual environment):
 pip install -r requirements.txt
 ~~~~
 
-### 1 Dataset:
+### 1.Dataset:
 We provide preprocessed NYT-FB60K (Han et al., 2018) and Medline21 (Dai et al., 2021).
 
 Please download the NYT-FB60K dataset from and unzip it under data/
 
 Similarly, please download the Medline21 dataset from and unzip it under data/
 
-### 2 Train:
+### 2.Pre-trained KG Encoder:
+Please download the pre-trained KG encoder from and put them under 
+
+### 3.Train:
 Run the following script for training XBE on NYT-FB60K.
 ~~~
 
@@ -27,7 +30,7 @@ Run the following script for training XBE on Medline21.
 ~~~
 
 If you want to directly utilize our pre-trained XBE models, you can download and from and put them under and respectively.
-### 3 Test:
+### 4.Test:
 Please run the following script for testing the trained XBE model on NYT-FB60K and Medline21 datasets respectively.
 ~~~~
 
