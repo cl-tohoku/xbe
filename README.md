@@ -38,6 +38,11 @@ Please run the following script for testing the trained XBE model on NYT-FB60K a
 ### Ablation Study:
 Please run the following script for training and testing the XBE model without the cross-stitch mechanism.
 
-Please run the following script for the XBE model without Text encoder.
+Run the following script for the XBE model without Text encoder.
 
-Please run the following script for the XBE model without KG encoder.
+Run the following script for the XBE model without KG encoder.
+
+Run the following script for the XBE model with frozen KG encoder.
+
+Run the following script for the XBE model with the KG encoder that is randomly initialized.
+
