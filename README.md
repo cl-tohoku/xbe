@@ -1,6 +1,6 @@
 # XBE
 Codes and datasets for our paper "Cross-stitching Text and Knowledge Graph Encoders for Distantly Supervised Relation Extraction" (EMNLP 2022)
-## Overview of our model
+## Overview of XBE
 
 ### Setup
 Install dependencies (consider using a virtual environment):
