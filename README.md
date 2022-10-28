@@ -1,5 +1,5 @@
 # XBE
-Codes and datasets for our paper "Cross-stitching Text and Knowledge Graph Encoders for Distantly Supervised Relation Extraction" (EMNLP 2022)
+Codes and datasets for our paper **"Cross-stitching Text and Knowledge Graph Encoders for Distantly Supervised Relation Extraction"** (EMNLP 2022)
 ## Overview of XBE
   <img src="/xbe_overview.png" width="500">
 
@@ -8,13 +8,12 @@ Install dependencies (consider using a virtual environment):
 ~~~~
 pip install -r requirements.txt
 ~~~~
+Then, follow the [instruction](https://github.com/NVIDIA/apex) to install **apex**.
 
 ### 1.Dataset:
 We provide preprocessed NYT-FB60K (Han et al., 2018) and Medline21 (Dai et al., 2021).
 
-Please download the NYT-FB60K dataset from and unzip it under data/
-
-Similarly, please download the Medline21 dataset from and unzip it under data/
+Please download the NYT-FB60K dataset from and Medline21 dataset from and unzip them under data/
 
 ### 2.Pre-trained KG Encoder:
 Please download the pre-trained KG encoder from and put them under 
