@@ -74,4 +74,4 @@ bash test_xbe_bio.sh
   bash train_test_xbe_bio_random_kg.sh
   ~~~
 
-###Acknowledgements:
+### Acknowledgements:
