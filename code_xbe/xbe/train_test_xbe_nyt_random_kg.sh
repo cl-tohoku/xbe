@@ -1,0 +1,34 @@
+CUDA_VISIBLE_DEVICES=0 python3 main_crst_all.py \
+        --seed 77777 \
+        --lr 3e-5 --batch_size_per_gpu 80 --max_epoch 10 \
+	--max_length 80 \
+	--mode CM \
+	--dataset nyt \
+	--entity_marker --ckpt_to_load None \
+	--train_prop 1 \
+	--bag_size 30 \
+	--entity_embedding_load_path ../../data/nyt/entity_embedding.npy \
+	--kg_method TransE_re \
+	--direct_feature \
+	--freeze_entity \
+	--prefix TXKG \
+	--w_symloss 0.6 \
+	--crst_mod resi
+
+CUDA_VISIBLE_DEVICES=0 python3 main_crst_all.py \
+        --seed 77777 \
+        --lr 3e-5 --batch_size_per_gpu 80 --max_epoch 10 \
+        --max_length 80 \
+        --mode CM \
+        --dataset nyt \
+        --entity_marker --ckpt_to_load None \
+        --train_prop 1 \
+        --bag_size 30 \
+        --entity_embedding_load_path ../../data/nyt/entity_embedding.npy \
+        --kg_method TransE_re \
+        --direct_feature \
+        --freeze_entity \
+        --prefix TXKG \
+        --w_symloss 0.6 \
+        --crst_mod resi \
+        --test --test_only
