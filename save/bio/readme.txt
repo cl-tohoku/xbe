@@ -1,1 +1,1 @@
-This is the directory to store the pretrained XBE model.
+This is the directory to store the trained XBE model.
