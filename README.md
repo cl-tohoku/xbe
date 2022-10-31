@@ -19,7 +19,7 @@ Please download them from here: [NYT10](http://www.cl.ecei.tohoku.ac.jp/~dq/Data
 Please download our pre-trained KG encoders from: [NYT10 KG enc.](http://www.cl.ecei.tohoku.ac.jp/~dq/Data_for_EMNLP2022/nyt-pre-kg.ckpt) and [Medline21 KG enc.](http://www.cl.ecei.tohoku.ac.jp/~dq/Data_for_EMNLP2022/bio-pre-kg.ckpt), and put them under `code_xbe/xbe/ckpt_kg/`
 
 ### 3.Train:
-Run the following script for training XBE on NYT-FB60K.
+Run the following script for training XBE on NYT10.
 ~~~
 cd code_xbe/xbe/
 bash train_xbe_nyt.sh
