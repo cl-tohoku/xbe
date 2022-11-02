@@ -8,3 +8,5 @@ numpy
 scipy
 tqdm
 sklearn
+pandas
+torchmetrics
