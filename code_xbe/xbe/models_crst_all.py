@@ -41,17 +41,6 @@ class REModel_KG_CRST(nn.Module):
                     self.rel_fc = nn.Linear(args.hidden_size*2+self.entity_embedding.weight.shape[1], args.rel_num)
                 elif args.prefix == 'TXKG':
                     self.rel_fc = nn.Linear(args.hidden_size*scale+args.hidden_size*4+self.entity_embedding.weight.shape[1], args.rel_num)
-                    #self.rel_fc = nn.Linear(args.hidden_size*scale+args.hidden_size*4, args.rel_num)
-                elif args.prefix == 'OKG':
-                    self.rel_fc = nn.Linear(args.hidden_size*2+self.entity_embedding.weight.shape[1], args.rel_num)
-                elif args.prefix == 'OHT':
-                    self.rel_fc = nn.Linear(args.hidden_size*scale+self.entity_embedding.weight.shape[1], args.rel_num)
-                elif args.prefix == 'OHTKG':
-                    self.rel_fc = nn.Linear(args.hidden_size*scale+args.hidden_size*2+self.entity_embedding.weight.shape[1], args.rel_num)
-                elif args.prefix == 'CHTKG':
-                    self.rel_fc = nn.Linear(args.hidden_size*scale+args.hidden_size+args.hidden_size*2+self.entity_embedding.weight.shape[1], args.rel_num)
-                elif args.prefix == 'CHT':
-                    self.rel_fc = nn.Linear(args.hidden_size*scale+args.hidden_size+self.entity_embedding.weight.shape[1], args.rel_num)
             else:
                 print('not defined method', self.kg_method)
                 exit(0)
@@ -109,18 +98,6 @@ class REModel_KG_CRST(nn.Module):
             state = torch.cat([outputs[1], outputs[2]], axis=1)
         elif self.args.prefix == 'TXKG':
             state = torch.cat([state, outputs[1], outputs[2], max_h, mean_h], axis=1)
-        elif self.args.prefix == 'OKG':
-            state = torch.cat([outputs[1], outputs[2]], axis=1)
-        elif self.args.prefix == 'OHT':
-            state = state
-        elif self.args.prefix == 'OHTKG':
-            state = torch.cat([state, outputs[1], outputs[2]], axis=1)
-        elif self.args.prefix == 'CHTKG':
-            cls = outputs[0][:, 0, :]
-            state = torch.cat([state, cls, outputs[1], outputs[2]], axis=1)
-        elif self.args.prefix == 'CHT':
-            cls = outputs[0][:, 0, :]
-            state = torch.cat([state, cls], axis=1)
             
         # linear map
         if self.direct_feature:   
@@ -139,16 +116,6 @@ class REModel_KG_CRST(nn.Module):
                     tot_loss = loss + float(self.args.w_symloss)*outputs[4]
                 else:
                     tot_loss = loss + outputs[4]
-            elif self.args.prefix == 'OKG':
-                tot_loss = loss
-            elif self.args.prefix == 'OHT':
-                tot_loss = loss
-            elif self.args.prefix == 'OHTKG':
-                tot_loss = loss + outputs[-1]
-            elif self.args.prefix == 'CHTKG':
-                tot_loss = loss + outputs[-1]
-            elif self.args.prefix == 'CHT':
-                tot_loss = loss
                 
             return tot_loss, output
         else:
