@@ -74,4 +74,17 @@ bash test_xbe_bio.sh
   bash train_test_xbe_bio_random_kg.sh
   ~~~
 
+### Plotting Precision Recall Curves:
+- Please download [PRC NYT](http://www.cl.ecei.tohoku.ac.jp/~dq/Data_for_EMNLP2022/EMNLP2022_NYT_PRC_data.zip) and [PRC Bio](http://www.cl.ecei.tohoku.ac.jp/~dq/Data_for_EMNLP2022/EMNLP2022_Biomedical_PRC_data.zip), then unzip them.
+~~~
+unzip EMNLP2022_NYT_PRC_data.zip
+unzip EMNLP2022_Biomedical_PRC_data.zip
+cd EMNLP2022_NYT_PRC_data
+cd EMNLP2022_Biomedical_PRC_data
+~~~
+- Run the following Jupyter Notebook script in them for plotting.
+~~~
+plot_precision_recall.ipynb
+~~~
+
 ### Acknowledgements:
